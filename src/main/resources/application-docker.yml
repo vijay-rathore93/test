@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: customer
+  datasource:
+    password: jayshriram@1
+    url: jdbc:postgresql://postgres:5432/transaction
+    username: vijay
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
