@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Slf4j
 @RestController
@@ -33,7 +34,7 @@ public class TransactionController {
     }
 
     @GetMapping("currencies")
-    public ResponseEntity<List<String>> getCurrencies(){
+    public ResponseEntity<Set<String>> getCurrencies(){
         return new ResponseEntity<>(transactionService.getCurrencies(), HttpStatus.OK);
     }
 

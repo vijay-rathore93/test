@@ -8,10 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -71,8 +68,8 @@ public class TransactionService {
 
     }
 
-    public List<String> getCurrencies() {
-        return transactionRepo.findAll().stream().map(Transaction::getCurrency).collect(Collectors.toList());
+    public Set<String> getCurrencies() {
+        return transactionRepo.findAll().stream().map(Transaction::getCurrency).collect(Collectors.toSet());
     }
 
     public Map<String,Double > getSum(Integer transactionId) {
